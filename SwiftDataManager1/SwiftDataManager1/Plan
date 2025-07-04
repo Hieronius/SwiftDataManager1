@@ -1,0 +1,5 @@
+Now SwiftData handles savings automatically
+
+1. The goal right now is to implement a second State and handle it's relationship
+
+2. Create a GlobalState with Main and Second state as it's parts
