@@ -3,13 +3,17 @@ import SwiftUI
 final class MainViewModel: ObservableObject {
 	
 	let swiftDataManager: SwiftDataManager
+	
 	@Published var mainState: MainState
+	@Published var secondState: SecondState
 	
 	init(swiftDataManager: SwiftDataManager,
-		 mainState: MainState) {
+		 mainState: MainState,
+		 secondState: SecondState) {
 		
 		self.swiftDataManager = swiftDataManager
 		self.mainState = mainState
+		self.secondState: SecondState
 	}
 	
 	func addItem() {
