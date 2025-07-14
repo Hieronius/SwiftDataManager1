@@ -13,7 +13,7 @@ final class MainViewModel: ObservableObject {
 		
 		self.swiftDataManager = swiftDataManager
 		self.mainState = mainState
-		self.secondState: SecondState
+		self.secondState = secondState
 	}
 	
 	func addItem() {
@@ -24,13 +24,19 @@ final class MainViewModel: ObservableObject {
 		mainState.items -= 1
 	}
 	
-	func saveState() {
-		swiftDataManager.saveState(mainState)
+	func saveMainState() {
+		swiftDataManager.saveMainState(mainState)
 	}
 	
-	func loadState() {
-		let state = swiftDataManager.loadState()
-		print(state?.items)
-		mainState = state ?? MainState(items: 555)
+	func addDoor() {
+		secondState.doors += 1
+	}
+	
+	func removeDoor() {
+		secondState.doors -= 1
+	}
+	
+	func saveSecondState() {
+		swiftDataManager.saveSecondState(secondState)
 	}
 }

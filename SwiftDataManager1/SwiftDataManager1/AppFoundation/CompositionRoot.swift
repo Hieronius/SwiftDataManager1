@@ -12,10 +12,11 @@ final class CompositionRoot {
 	init() {
 		
 		do {
-			self.modelContainer = try ModelContainer(for: MainState.self)
+			self.modelContainer = try ModelContainer(for: MainState.self,
+													 SecondState.self)
 			self.swiftDataManager = SwiftDataManager(context: self.modelContainer.mainContext)
-			self.mainState = swiftDataManager.loadState() ?? MainState(items: 111)
-			self.secondState = swiftDataManager.loadState() ?? 
+			self.mainState = swiftDataManager.loadMainState() ?? MainState(items: 111)
+			self.secondState = swiftDataManager.loadSecondState() ?? SecondState(doors: 11)
 			
 		} catch {
 			fatalError("Failed to initialize Composition Root")
@@ -26,7 +27,8 @@ final class CompositionRoot {
 		
 		let viewModel = MainViewModel(
 			swiftDataManager: self.swiftDataManager,
-			mainState: self.mainState
+			mainState: self.mainState,
+			secondState: self.secondState
 		)
 		let view = MainView(viewModel: viewModel)
 		return view

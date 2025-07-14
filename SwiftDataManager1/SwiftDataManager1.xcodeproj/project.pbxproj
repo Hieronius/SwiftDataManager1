@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD008E9A2E24D8BF008DA2C6 /* SecondState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD008E992E24D8BF008DA2C6 /* SecondState.swift */; };
 		DD88412E2E1856A6007FF2C8 /* SwiftDataManager1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88412D2E1856A6007FF2C8 /* SwiftDataManager1App.swift */; };
 		DD8841302E1856A6007FF2C8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88412F2E1856A6007FF2C8 /* MainView.swift */; };
 		DD8841322E1856AA007FF2C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD8841312E1856AA007FF2C8 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD008E992E24D8BF008DA2C6 /* SecondState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondState.swift; path = SwiftDataManager1/MainScreen/Model/SecondState.swift; sourceTree = SOURCE_ROOT; };
 		DD88412A2E1856A6007FF2C8 /* SwiftDataManager1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDataManager1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD88412D2E1856A6007FF2C8 /* SwiftDataManager1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager1App.swift; sourceTree = "<group>"; };
 		DD88412F2E1856A6007FF2C8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				DD8841402E18582F007FF2C8 /* MainState.swift */,
+				DD008E992E24D8BF008DA2C6 /* SecondState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD8841412E18582F007FF2C8 /* MainState.swift in Sources */,
+				DD008E9A2E24D8BF008DA2C6 /* SecondState.swift in Sources */,
 				DD8841472E1858E4007FF2C8 /* SwiftDataManager.swift in Sources */,
 				DD8841302E1856A6007FF2C8 /* MainView.swift in Sources */,
 				DD88412E2E1856A6007FF2C8 /* SwiftDataManager1App.swift in Sources */,

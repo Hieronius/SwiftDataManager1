@@ -14,6 +14,10 @@ struct MainView: View {
 			Spacer()
 			Text("Items - \(viewModel.mainState.items)")
 			Spacer()
+			Button("Save Main State") {
+				viewModel.saveMainState()
+			}
+			Spacer()
 			
 			HStack {
 				Spacer()
@@ -28,15 +32,21 @@ struct MainView: View {
 			}
 			
 			Spacer()
+			Text("Doors - \(viewModel.secondState.doors)")
+			Spacer()
+			Button("Save Second State") {
+				viewModel.saveSecondState()
+			}
+			Spacer()
 			
 			HStack {
 				Spacer()
-				Button("Save State") {
-					viewModel.saveState()
+				Button("Add Door") {
+					viewModel.addDoor()
 				}
 				Spacer()
-				Button("Load State") {
-					viewModel.loadState()
+				Button("Remove Door") {
+					viewModel.removeDoor()
 				}
 				Spacer()
 			}

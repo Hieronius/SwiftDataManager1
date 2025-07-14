@@ -8,12 +8,14 @@ final class SwiftDataManager {
 		self.context = context
 	}
 	
-	func saveState(_ state: MainState) {
+	// MARK: - CRUD for MainState
+	
+	func saveMainState(_ mainState: MainState) {
 		
-		if let fetchedState = self.loadState() {
-			fetchedState.items = state.items
+		if let fetchedState = self.loadMainState() {
+			fetchedState.items = mainState.items
 		} else {
-			context.insert(state)
+			context.insert(mainState)
 		}
 		
 		do {
@@ -24,7 +26,7 @@ final class SwiftDataManager {
 		
 	}
 	
-	func loadState() -> MainState? {
+	func loadMainState() -> MainState? {
 		
 		do {
 			let descriptor = FetchDescriptor<MainState>()
@@ -34,6 +36,38 @@ final class SwiftDataManager {
 			
 		} catch {
 			fatalError("Failed to load state")
+		}
+	}
+	
+	// MARK: - CRUD for SecondState
+	
+	func saveSecondState(_ secondState: SecondState) {
+		
+		if let fetchedState = self.loadSecondState() {
+			fetchedState.doors = secondState.doors
+		} else {
+			self.context.insert(secondState)
+		}
+		
+		do {
+			try context.save()
+			
+		} catch {
+			fatalError("Failed to save SecondState")
+		}
+		
+	}
+	
+	func loadSecondState() -> SecondState? {
+		
+		do {
+			let descriptor = FetchDescriptor<SecondState>()
+			let result = try self.context.fetch(descriptor)
+			guard let state = result.first else { return nil }
+			return state
+			
+		} catch {
+			fatalError("Failed to load SecondState")
 		}
 	}
 }

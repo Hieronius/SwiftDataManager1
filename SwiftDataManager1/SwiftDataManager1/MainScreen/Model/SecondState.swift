@@ -1,7 +1,7 @@
 import SwiftData
 
 @Model
-class SecondState {
+final class SecondState {
 	
 	var doors: Int
 	
