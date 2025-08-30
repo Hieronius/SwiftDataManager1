@@ -35,6 +35,7 @@ struct TownView: View {
 				viewModel.backToMenu()
 			}
 		}
+		.navigationBarBackButtonHidden(true)
 	}
 }
 

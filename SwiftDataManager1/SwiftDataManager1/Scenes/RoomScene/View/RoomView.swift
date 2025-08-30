@@ -63,5 +63,6 @@ struct RoomView: View {
 			}
 			
 		}
+		.navigationBarBackButtonHidden(true)
     }
 }

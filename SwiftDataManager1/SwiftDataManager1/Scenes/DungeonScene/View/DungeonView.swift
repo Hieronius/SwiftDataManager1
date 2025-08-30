@@ -42,5 +42,6 @@ struct DungeonView: View {
 			}
 			Spacer()
 		}
+		.navigationBarBackButtonHidden(true)
 	}
 }
