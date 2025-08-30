@@ -13,7 +13,7 @@ struct TownView: View {
 		Spacer()
 		VStack {
 			Spacer()
-			Text("Maps -\(viewModel.fourthState.maps)")
+			Text("Maps -\(viewModel.gameState.maps)")
 			Spacer()
 			Button("Add Maps") {
 				viewModel.addMaps()
@@ -21,10 +21,6 @@ struct TownView: View {
 			Spacer()
 			Button("Remove Maps") {
 				viewModel.removeMaps()
-			}
-			Spacer()
-			Button("Save FourthState") {
-				viewModel.saveFourthState()
 			}
 			Spacer()
 			Button("Move to Room") {

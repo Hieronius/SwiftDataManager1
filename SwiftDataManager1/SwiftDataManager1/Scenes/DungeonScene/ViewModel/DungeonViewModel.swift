@@ -2,30 +2,24 @@ import SwiftUI
 
 final class DungeonViewModel: ObservableObject {
 	
-	let swiftDataManager: SwiftDataManager
 	let navigationManager: NavigationManager
+
+	@Published var gameState: GameState
 	
-	@Published var thirdState: ThirdState
-	
-	init(swiftDataManager: SwiftDataManager,
-		 navigationManager: NavigationManager,
-		 thirdState: ThirdState) {
+	init(navigationManager: NavigationManager,
+		 gameState: GameState
+	) {
 		
-		self.swiftDataManager = swiftDataManager
 		self.navigationManager = navigationManager
-		self.thirdState = thirdState
+		self.gameState = gameState
 	}
 	
 	func addWords() {
-		thirdState.words += 1
+		gameState.words += 1
 	}
 	
 	func removeWords() {
-		thirdState.words -= 1
-	}
-	
-	func saveThirdState() {
-		swiftDataManager.saveThirdState(thirdState)
+		gameState.words -= 1
 	}
 	
 	func moveToRoom() {

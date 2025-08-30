@@ -3,29 +3,23 @@ import SwiftUI
 final class TownViewModel: ObservableObject {
 	
 	let navigationManager: NavigationManager
-	let swiftDataManager: SwiftDataManager
-	
-	@Published var fourthState: FourthState
+
+	@Published var gameState: GameState
 	
 	init(navigationManager: NavigationManager,
-		 swiftDataManager: SwiftDataManager,
-		 fourthState: FourthState) {
+		 gameState: GameState
+	) {
 		
 		self.navigationManager = navigationManager
-		self.swiftDataManager = swiftDataManager
-		self.fourthState = fourthState
+		self.gameState = gameState
 	}
 	
 	func addMaps() {
-		fourthState.maps += 1
+		gameState.maps += 1
 	}
 	
 	func removeMaps() {
-		fourthState.maps -= 1
-	}
-	
-	func saveFourthState() {
-		swiftDataManager.saveFourthState(fourthState)
+		gameState.maps -= 1
 	}
 	
 	func moveToRoom() {

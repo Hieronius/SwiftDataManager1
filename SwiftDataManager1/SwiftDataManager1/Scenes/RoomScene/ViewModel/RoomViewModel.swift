@@ -2,45 +2,33 @@ import SwiftUI
 
 final class RoomViewModel: ObservableObject {
 	
-	let swiftDataManager: SwiftDataManager
 	let navigationManager: NavigationManager
 	
-	@Published var mainState: MainState
-	@Published var secondState: SecondState
+	@Published var gameState: GameState
 	
-	init(swiftDataManager: SwiftDataManager,
-		 navigationManager: NavigationManager,
-		 mainState: MainState,
-		 secondState: SecondState) {
+	init(navigationManager: NavigationManager,
+		 gameState: GameState
+	) {
 		
-		self.swiftDataManager = swiftDataManager
 		self.navigationManager = navigationManager
-		self.mainState = mainState
-		self.secondState = secondState
+		self.gameState = gameState
+		
 	}
 	
 	func addItem() {
-		mainState.items += 1
+		gameState.items += 1
 	}
 	
 	func removeItem() {
-		mainState.items -= 1
-	}
-	
-	func saveMainState() {
-		swiftDataManager.saveMainState(mainState)
+		gameState.items -= 1
 	}
 	
 	func addDoor() {
-		secondState.doors += 1
+		gameState.doors += 1
 	}
 	
 	func removeDoor() {
-		secondState.doors -= 1
-	}
-	
-	func saveSecondState() {
-		swiftDataManager.saveSecondState(secondState)
+		gameState.doors -= 1
 	}
 	
 	func moveToDungeon() {

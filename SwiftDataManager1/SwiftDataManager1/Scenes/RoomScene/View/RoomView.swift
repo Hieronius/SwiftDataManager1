@@ -12,11 +12,7 @@ struct RoomView: View {
 		
 		VStack {
 			Spacer()
-			Text("Items - \(viewModel.mainState.items)")
-			Spacer()
-			Button("Save Main State") {
-				viewModel.saveMainState()
-			}
+			Text("Items - \(viewModel.gameState.items)")
 			Spacer()
 			
 			HStack {
@@ -32,11 +28,7 @@ struct RoomView: View {
 			}
 			
 			Spacer()
-			Text("Doors - \(viewModel.secondState.doors)")
-			Spacer()
-			Button("Save Second State") {
-				viewModel.saveSecondState()
-			}
+			Text("Doors - \(viewModel.gameState.doors)")
 			Spacer()
 			
 			HStack {

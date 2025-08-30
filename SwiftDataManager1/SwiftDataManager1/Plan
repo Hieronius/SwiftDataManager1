@@ -1,25 +1,7 @@
-
-
-Now i have Menu and two different screens with two different states.
-You can transition between them without any problems.
-All states value updates automatically and also automatically save
-You need only to save Initial State when you first run the app
-
-1. Implement a single State for all game to avoid complications with different states. Just make all states in a single file and put references to RootGameState. All properties can be binded via:
-
-	GameState.roomState.enemyHP -= 2
-
-@Model
-final class GameState {
-	var roomState: RoomState
-	var dungeonState: DungeonState
-	var townState: TownState
-}
-
-2. Feels like i don't need extra references to SwiftDataManager in my locations because it's being tracked automatically. Just load it initially from the memory or create a save default one in CompositionRoot init()
+1. Remove unecessary swiftDataCalls from the screens
 
 3. Remove "back button from location screens to avoid multiplying states"
 
-4. Implement Pause/Settings/Exit/NewGame/so on buttons in Menu
+
 
 

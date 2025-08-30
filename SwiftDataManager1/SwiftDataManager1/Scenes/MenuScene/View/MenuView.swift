@@ -12,16 +12,36 @@ struct MenuView: View {
 		
 		NavigationStack(path: $viewModel.path) {
 			
+			
 			List {
 				
-				Button("Room") {
-					viewModel.goToRoom()
+				Section(header: Text("Locations")) {
+					
+					Button("Room") {
+						viewModel.goToRoom()
+					}
+					Button("Dungeon") {
+						viewModel.goToDungeon()
+					}
+					Button("Town") {
+						viewModel.goToTown()
+					}
 				}
-				Button("Dungeon") {
-					viewModel.goToDungeon()
-				}
-				Button("Town") {
-					viewModel.goToTown()
+				
+				Section(header: Text("Options")) {
+					
+					Button("Start New Game") {
+						
+					}
+					Button("Save") {
+						//
+					}
+					Button("Exit") {
+						
+					}
+					Button("Game Config") {
+						
+					}
 				}
 			}
 			

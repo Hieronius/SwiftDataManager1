@@ -14,11 +14,7 @@ struct DungeonView: View {
 		
 		VStack {
 			Spacer()
-			Button("Save Third State") {
-				viewModel.saveThirdState()
-			}
-			Spacer()
-			Text("Words - \(viewModel.thirdState.words)")
+			Text("Words - \(viewModel.gameState.words)")
 			Spacer()
 			Button("Add Words") {
 				viewModel.addWords()
