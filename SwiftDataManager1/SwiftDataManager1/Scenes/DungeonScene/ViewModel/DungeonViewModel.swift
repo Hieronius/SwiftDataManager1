@@ -1,6 +1,6 @@
 import SwiftUI
 
-final class ThirdViewModel: ObservableObject {
+final class DungeonViewModel: ObservableObject {
 	
 	let swiftDataManager: SwiftDataManager
 	let navigationManager: NavigationManager
@@ -26,6 +26,20 @@ final class ThirdViewModel: ObservableObject {
 	
 	func saveThirdState() {
 		swiftDataManager.saveThirdState(thirdState)
+	}
+	
+	func moveToRoom() {
+		navigationManager.pop()
+		navigationManager.push(.room)
+	}
+	
+	func moveToTown() {
+		navigationManager.pop()
+		navigationManager.push(.town)
+	}
+	
+	func backToMenu() {
+		navigationManager.pop()
 	}
 	
 }

@@ -6,7 +6,15 @@ enum AppScreen: String, Hashable, Identifiable {
 	/// Unique but stable ID for each screen
 	var id: AppScreen { self }
 
-	case main = "MainScreen"
-	
-	case third = "ThirdScreen"
+	/// Room encounter during dungeon exploration
+	case room = "Room"
+
+	/// Dungeon or Dungeon Map location during dungeon exploration
+	case dungeon = "Dungeon"
+
+	/// Town screen outside the dungeon with merchant, blacksmith and so on
+	case town = "Town"
 }
+
+
+

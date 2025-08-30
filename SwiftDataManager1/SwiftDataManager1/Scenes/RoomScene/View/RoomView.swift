@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct MainView: View {
+struct RoomView: View {
 	
-	@StateObject private var viewModel: MainViewModel
+	@StateObject private var viewModel: RoomViewModel
 	
-	init(viewModel: MainViewModel) {
+	init(viewModel: RoomViewModel) {
 		_viewModel = StateObject(wrappedValue: viewModel)
 	}
 	
@@ -52,6 +52,23 @@ struct MainView: View {
 			}
 			
 			Spacer()
+			
+			VStack {
+				
+				Spacer()
+				Button("Move to Dungeon") {
+					viewModel.moveToDungeon()
+				}
+				Spacer()
+				Button("Move to Town") {
+					viewModel.moveToTown()
+				}
+				Spacer()
+				Button("Back to Menu") {
+					viewModel.backToMenu()
+				}
+				Spacer()
+			}
 			
 		}
     }

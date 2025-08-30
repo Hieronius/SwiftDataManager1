@@ -70,4 +70,66 @@ final class SwiftDataManager {
 			fatalError("Failed to load SecondState")
 		}
 	}
+	
+	// MARK: - CRUD for ThirdState
+	
+	func saveThirdState(_ thirdState: ThirdState) {
+		
+		if let fetchedState = loadThirdState() {
+			fetchedState.words = thirdState.words
+		} else {
+			context.insert(thirdState)
+		}
+		
+		do {
+			try context.save()
+			
+		} catch {
+			fatalError("Failed to save ThirdState")
+		}
+	}
+	
+	func loadThirdState() -> ThirdState? {
+		
+		do {
+			let descriptor = FetchDescriptor<ThirdState>()
+			let result = try context.fetch(descriptor)
+			guard let state = result.first else { return nil }
+			return state
+			
+		} catch {
+			fatalError("Failed to load ThirdState")
+		}
+	}
+	
+	// MARK: - CRUD for FourthState
+	
+	func saveFourthState(_ fourthState: FourthState) {
+		
+		if let fetchedState = loadFourthState() {
+			fetchedState.maps = fourthState.maps
+		} else {
+			context.insert(fourthState)
+		}
+		
+		do {
+			try context.save()
+			
+		} catch {
+			fatalError("Failed to save FourthState")
+		}
+	}
+	
+	func loadFourthState() -> FourthState? {
+		
+		do {
+			let descriptor = FetchDescriptor<FourthState>()
+			let result = try context.fetch(descriptor)
+			guard let state = result.first else { return nil }
+			return state
+			
+		} catch {
+			fatalError("Failed to load FourthState")
+		}
+	}
 }

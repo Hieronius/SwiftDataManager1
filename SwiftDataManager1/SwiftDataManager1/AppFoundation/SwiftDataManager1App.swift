@@ -15,7 +15,7 @@ struct SwiftDataManager1App: App {
 	
     var body: some Scene {
         WindowGroup {
-			compositionRoot.buildMainView()
+			compositionRoot.buildMenuView()
         }
     }
 }
