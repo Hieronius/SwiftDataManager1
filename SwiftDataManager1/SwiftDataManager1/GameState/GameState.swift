@@ -3,6 +3,16 @@ import SwiftData
 @Model
 final class GameState {
 	
+	// MARK: Room State
+	
+	
+	
+	// MARK: Dungeon State
+	
+	
+	
+	// MARK: Town State
+	
 	var items: Int
 	var doors: Int
 	var maps: Int
