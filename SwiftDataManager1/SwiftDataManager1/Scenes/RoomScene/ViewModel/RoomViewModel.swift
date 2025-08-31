@@ -2,9 +2,15 @@ import SwiftUI
 
 final class RoomViewModel: ObservableObject {
 	
+	// MARK: - Dependencies
+	
 	let navigationManager: NavigationManager
 	
+	// MARK: - Properties
+	
 	@Published var gameState: GameState
+	
+	// MARK: - Initialization
 	
 	init(navigationManager: NavigationManager,
 		 gameState: GameState
@@ -15,21 +21,19 @@ final class RoomViewModel: ObservableObject {
 		
 	}
 	
-	func addItem() {
-		gameState.items += 1
+	// MARK: - Combat
+	
+	func attackAndToogleCurrentTurn() {
+		
+		gameState.isHeroTurn ?
+		(gameState.enemyCurrentHP -= gameState.heroDamage) :
+		(gameState.heroCurrentHP -= gameState.enemyDamage)
+		
+		gameState.isHeroTurn.toggle()
+		print("is hero turn ? - \(gameState.isHeroTurn)")
 	}
 	
-	func removeItem() {
-		gameState.items -= 1
-	}
 	
-	func addDoor() {
-		gameState.doors += 1
-	}
-	
-	func removeDoor() {
-		gameState.doors -= 1
-	}
 	
 	func moveToDungeon() {
 		navigationManager.pop()

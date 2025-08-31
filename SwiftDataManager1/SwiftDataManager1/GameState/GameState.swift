@@ -5,7 +5,15 @@ final class GameState {
 	
 	// MARK: Room State
 	
+	var heroCurrentHP = 100
+	var heroMaxHP = 100
+	var heroDamage = 10
 	
+	var isHeroTurn = true
+	
+	var enemyCurrentHP = 100
+	var enemyMaxHP = 100
+	var enemyDamage = 5
 	
 	// MARK: Dungeon State
 	
@@ -13,19 +21,12 @@ final class GameState {
 	
 	// MARK: Town State
 	
-	var items: Int
-	var doors: Int
-	var maps: Int
-	var words: Int
+	var items = 10
+	var doors = 15
+	var maps = 20
+	var words = 25
 	
-	init(items: Int,
-		 doors: Int,
-		 maps: Int,
-		 words: Int) {
+	init() {
 		
-		self.items = items
-		self.doors = doors
-		self.maps = maps
-		self.words = words
 	}
 }

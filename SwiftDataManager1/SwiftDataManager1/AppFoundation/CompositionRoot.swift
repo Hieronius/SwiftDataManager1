@@ -11,7 +11,7 @@ final class CompositionRoot {
 	var swiftDataManager: SwiftDataManager
 	var gameState: GameState
 	
-	// MARK: - Init
+	// MARK: - Initialization
 	
 	init() {
 		
@@ -33,10 +33,7 @@ final class CompositionRoot {
 				
 			} else {
 				
-				let freshGameState = GameState(items: 111,
-											   doors: 11,
-											   maps: 49,
-											   words: 99)
+				let freshGameState = GameState()
 											   
 				self.gameState = freshGameState
 				swiftDataManager.saveGameState(gameState)
