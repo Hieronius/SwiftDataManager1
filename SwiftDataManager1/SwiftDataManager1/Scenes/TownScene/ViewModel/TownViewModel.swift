@@ -2,9 +2,15 @@ import SwiftUI
 
 final class TownViewModel: ObservableObject {
 	
+	// MARK: - Dependencies
+	
 	let navigationManager: NavigationManager
+	
+	// MARK: - Properties
 
 	@Published var gameState: GameState
+	
+	// MARK: - Init
 	
 	init(navigationManager: NavigationManager,
 		 gameState: GameState
@@ -14,13 +20,21 @@ final class TownViewModel: ObservableObject {
 		self.gameState = gameState
 	}
 	
-	func addMaps() {
-		gameState.maps += 1
+	// MARK: - Operations
+	
+	func upgradeHP() {
+		
 	}
 	
-	func removeMaps() {
-		gameState.maps -= 1
+	func upgradeDamage() {
+		
 	}
+	
+	func sellItems() {
+		
+	}
+	
+	// MARK: - Navigation
 	
 	func moveToRoom() {
 		navigationManager.pop()
