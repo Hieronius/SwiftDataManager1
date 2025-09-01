@@ -10,31 +10,30 @@ struct TownView: View {
 	
 	var body: some View {
 		
-		Spacer()
-		VStack {
-			Spacer()
-			Text("Maps -\(viewModel.gameState.maps)")
-			Spacer()
-			Button("Add Maps") {
-				viewModel.addMaps()
-			}
-			Spacer()
-			Button("Remove Maps") {
-				viewModel.removeMaps()
-			}
-			Spacer()
-			Button("Move to Room") {
-				viewModel.moveToRoom()
-			}
-			Spacer()
-			Button("Move to Dungeon") {
-				viewModel.moveToDungeon()
-			}
-			Spacer()
-			Button("Back to Menu") {
-				viewModel.backToMenu()
+		List {
+			
+			// Use overlay views for each location functionality
+			
+			Section(header: Text("Areas")) {
+				
+				Button("Training Center") {
+					// Improve your skills for money
+				}
+				Button("Market") {
+					// Sell/Buy stuff
+				}
+				Button("Adventure Guild") {
+					// Grab Quest
+				}
+				Button("Blacksmith") {
+					// Buy/Sell/Repair equipment
+				}
+				Button("Alchemy Store") {
+					// Buy/Sell potions
+				}
 			}
 		}
+		
 		.navigationBarBackButtonHidden(true)
 	}
 }
